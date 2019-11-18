@@ -6,7 +6,7 @@ library(dplyr)
 library(tibble)
 
 # Sources
-source("C:\Users\Reid\Documents\R\prophet\R\main\utils.R")
+source("utils.R")
 
 main <- function(plot = FALSE, data = FALSE) {
   
