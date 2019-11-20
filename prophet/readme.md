@@ -1,6 +1,5 @@
 # A Timeseries Forecast in R
 
-#------------------------------
 
 `library(fbprophet)`
 ## A few iterations
