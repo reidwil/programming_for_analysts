@@ -18,7 +18,7 @@ I wanted to take a right-out-the-box approach to show a sample timeseries foreca
 ![Initial Plot](https://github.com/reidwil/programming_for_analysts/blob/master/prophet/plot.png)
 
 
-#--------------------------------
+--------------------------------
 
 This is a very excellent forecast right out of the box on this set of dummy data.
 I did notice the points of data were lending to a more multiplicative method: 
