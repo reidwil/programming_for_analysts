@@ -1,6 +1,8 @@
 ## install homebrew
 echo "Installing Homebrew.."
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/$USER/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
 echo "Homebrew successfully installed"
 
 ## install git
