@@ -10,13 +10,10 @@ echo "Installing git.."
 brew install git
 echo "git successfully installed"
 
-## install docker and co
-echo "Installing docker.."
-brew cask install docker
-brew install docker-compose docker-machine xhyve docker-machine-driver-xhyve
-sudo chown root:wheel $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
-sudo chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
-echo "docker successfully installed"
+## install ripgrep
+echo "Installing ripgrep..."
+brew install ripgrep
+echo "ripgrep installed"
 
 ## install git completion
 echo "Installing git completion.."
@@ -42,7 +39,7 @@ echo "iTerm2 + Colors installed"
 
 ## install visual studio code
 echo "Installing VS Code.."
-brew cask install visual-studio-code
+brew install visual-studio-code
 ## this might ask you for your password
 code --version
 echo "VS Code successfully installed"
