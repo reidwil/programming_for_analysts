@@ -10,9 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: maxkomarychev/octions/octions/issues/create-comment@master
       - run: bash scripts/send-comment.sh
-        shell: bash
+      - uses: maxkomarychev/octions/octions/issues/create-comment@master
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           issue_number: ${{ github.event.pull_request.number }}
