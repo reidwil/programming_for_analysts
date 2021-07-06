@@ -12,5 +12,5 @@ jobs:
       - uses: actions/checkout@v2
       
       - run: ls -la && cd .github/ && ls -la && cd workflows/ && ls -la && cd scripts/ && ls -la
-      - run: bash send-comment.sh
+      - run: ls -la
         shell: bash
