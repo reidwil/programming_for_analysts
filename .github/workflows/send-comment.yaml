@@ -7,6 +7,6 @@ jobs:
   generating-text:
     runs-on: ubuntu-latest
     steps:
-      - run: chmod +x /scripts/send-comment.sh
+      - run: ls -la
       - run: ./scripts/send-comment.sh
         shell: bash
