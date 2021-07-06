@@ -10,6 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: bash scripts/send-comment.sh && ls -la
+      - uses: maxkomarychev/octions/octions/issues/create-comment@master
+      - run: bash scripts/send-comment.sh
         shell: bash
-      - run: ls -la
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issue_number: ${{ github.event.pull_request.number }}
+          body: FILE::text.txt
+      
