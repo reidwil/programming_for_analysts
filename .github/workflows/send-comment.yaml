@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      
       - run: ls -la
-      - run: ./scripts/send-comment.sh
+      - run: .github/workflows/scripts/send-comment.sh
         shell: bash
