@@ -11,6 +11,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
-      - run: ls -la
-      - run: .github/workflows/scripts/send-comment.sh
+      - run: ls -la && cd .github/ && ls -la && cd workflows/ && ls -la && cd scripts/ && ls -la
+      # - run: .github/workflows/scripts/send-comment.sh
         shell: bash
