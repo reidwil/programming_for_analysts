@@ -1,0 +1,12 @@
+name: Output to comment
+on:
+  - pull_request
+  - push
+
+jobs:
+  generating-text:
+    runs-on: ubuntu-latest
+    steps:
+      - run: chmod +x /scripts/send-comment.sh
+      - run: ./scripts/send-comment.sh
+        shell: bash
