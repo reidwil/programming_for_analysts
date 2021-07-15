@@ -16,5 +16,14 @@ jobs:
           reaction: rocket
         env:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
-      - run: 'echo Found it!'
+      - uses: khan/pull-request-comment-trigger@master
+        id: other_check
+        with:
+          trigger: '@deploy'
+          reaction: rocket
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+      - run: 'echo you said ${{ github.event.comment.body }}!'
         if: steps.check.outputs.triggered == 'true'
+      - run: 'echo Hello World!'
+        if: steps.other_check.outputs.triggered == 'true'
