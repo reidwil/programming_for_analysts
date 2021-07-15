@@ -1,5 +1,10 @@
-name: GitHub Actions Demo
-on: [push]
+name: Comment
+on:
+  pull_request:
+    types: [opened]
+  issue_comment:
+    types: [created]
+
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
