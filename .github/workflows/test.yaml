@@ -28,4 +28,4 @@ jobs:
       - run: 'echo Hello World!'
         if: steps.other_check.outputs.triggered == 'true'
       - run: 'echo YOU TRIGGERED ME!'
-        if: ${{ github.event.comment.body }} == 'test'
+        if: github.event.comment.body == 'test'
