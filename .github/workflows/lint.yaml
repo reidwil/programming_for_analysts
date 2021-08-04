@@ -1,0 +1,46 @@
+name: 🔎  Lint files
+
+on:
+  pull_request:
+    types: [opened]
+  issue_comment:
+    types: [created]
+
+jobs:
+  lint-files:
+    if: github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    - name: Set up Python 3.6
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.6
+
+    - name: Install sqlfluff
+      run: pip install sqlfluff
+
+    - uses: khan/pull-request-comment-trigger@master
+      id: lint
+      with:
+        trigger: '/lint'
+        reaction: rocket
+      env:
+        GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+
+    - name: Lint files
+      run: .github/cicd/lint.sh > output.txt
+      if: steps.lint.outputs.triggered == 'true'
+
+    - name: Send Comment
+      uses: maxkomarychev/octions/octions/issues/create-comment@master
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        issue_number: ${{ github.event.issue.number }}
+        body: FILE::output.txt
+      if: hashFiles('output.txt') != ''
