@@ -186,3 +186,4 @@ rd=rmdir
 run-help=man
 size='ls -lhF | awk '\''{ print $9 " " $5 }'\'
 which-command=whence
+
