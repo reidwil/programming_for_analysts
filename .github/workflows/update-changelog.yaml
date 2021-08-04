@@ -7,8 +7,6 @@ jobs:
     steps:
   
     - uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
         
     - uses: saadmk11/changelog-ci@v0.8.0
       env:
