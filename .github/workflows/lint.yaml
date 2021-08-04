@@ -1,8 +1,6 @@
 name: 🔎  Lint files
 
 on:
-  pull_request:
-    types: [opened]
   issue_comment:
     types: [created]
 
@@ -12,18 +10,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
+  
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
-
-    - name: Set up Python 3.6
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.6
-
-    - name: Install sqlfluff
-      run: pip install sqlfluff
 
     - uses: khan/pull-request-comment-trigger@master
       id: lint
@@ -32,15 +22,22 @@ jobs:
         reaction: rocket
       env:
         GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+
+    - name: Set up Python 3.6
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.6
+      if: steps.lint.outputs.triggered == 'true'
+
+    - name: Install sqlfluff
+      run: pip install sqlfluff
+      if: steps.lint.outputs.triggered == 'true'
         
     - uses: xt0rted/pull-request-comment-branch@v1
       id: comment-branch
-      
-    - run: git branch --show-current
+      if: steps.lint.outputs.triggered == 'true'
     
     - run: git checkout ${{ steps.comment-branch.outputs.head_ref }}
-    
-    - run: git branch --show-current
 
     - name: Lint files
       run: |
