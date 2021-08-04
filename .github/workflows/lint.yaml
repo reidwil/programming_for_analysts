@@ -34,7 +34,9 @@ jobs:
         GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
 
     - name: Lint files
-      run: .github/cicd/lint.sh > output.txt
+      run: |
+        chmod -R 777 .github/
+        .github/cicd/lint.sh > output.txt
       if: steps.lint.outputs.triggered == 'true'
 
     - name: Send Comment
