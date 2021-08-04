@@ -11,14 +11,14 @@ jobs:
         fetch-depth: 0
         
     - uses: saadmk11/changelog-ci@v0.8.0
-        with:
-          # Optional, only required when you want more customization
-          # e.g: group your changelog by labels with custom titles,
-          # different version prefix, pull request title and version number regex etc.
-          # config file can be in JSON or YAML format.
-          config_file: ./.github/cicd/changelog-ci-config.yaml
-        env:
-          # optional, only required for `private` repositories
-          # and required if the changelog comment
-          # option is turned on through the config file
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      with:
+        # Optional, only required when you want more customization
+        # e.g: group your changelog by labels with custom titles,
+        # different version prefix, pull request title and version number regex etc.
+        # config file can be in JSON or YAML format.
+        config_file: ./.github/cicd/changelog-ci-config.yaml
+      env:
+        # optional, only required for `private` repositories
+        # and required if the changelog comment
+        # option is turned on through the config file
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
