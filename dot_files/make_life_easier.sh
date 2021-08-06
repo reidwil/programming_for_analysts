@@ -10,6 +10,11 @@ echo "Installing git.."
 brew install git
 echo "git successfully installed"
 
+## install docker
+echo "Installing docker.."
+brew install docker
+echo "docker successfully installed"
+
 ## install ripgrep
 echo "Installing ripgrep..."
 brew install ripgrep
