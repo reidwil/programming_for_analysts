@@ -37,6 +37,9 @@ unzip iterm2-colors.zip
 rm iterm2-colors.zip
 echo "iTerm2 + Colors installed"
 
+## install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 ## install visual studio code
 echo "Installing VS Code.."
 brew install visual-studio-code
