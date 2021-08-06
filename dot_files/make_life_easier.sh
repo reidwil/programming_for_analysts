@@ -28,14 +28,7 @@ unzip iTerm2.zip &> /dev/null
 mv iTerm.app/ /Applications/iTerm.app
 spctl --add /Applications/iTerm.app
 rm -rf iTerm2.zip
-echo "iTerm2 successfully installed.. Adding colors.."
-cd ~/Downloads
-mkdir -p ${HOME}/iterm2-colors
-cd ${HOME}/iterm2-colors
-curl https://github.com/mbadolato/iTerm2-Color-Schemes/zipball/master > iterm2-colors.zip
-unzip iterm2-colors.zip
-rm iterm2-colors.zip
-echo "iTerm2 + Colors installed"
+echo "iTerm2 successfully installed.."
 
 ## install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
