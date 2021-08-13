@@ -1,7 +1,7 @@
 ## install homebrew
 echo "Installing Homebrew.."
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/$USER/.zprofile
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)"
 echo "Homebrew successfully installed"
 
@@ -77,8 +77,9 @@ echo "dbt successfully installed.. Printing version.."
 dbt --version
 echo "Setting up dbt profile.."
 mkdir ~/.dbt
-touch ~/.dbt/profiles.yml
-curl  path/to/profiles.yml >> ~/.dbt/profiles.yml
+cat >> ~/.dbt/profiles.yml <<EOL
+  YOU NEED TO FILL THIS OUT PERSONALLY
+EOL
 echo "dbt profile created.. You will need to edit this file later."
 
 ## install the dbt completion script
