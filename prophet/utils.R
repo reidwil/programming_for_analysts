@@ -1,5 +1,25 @@
 # Plots preformatted Prophet CSV data
 
+run_forecast_with <- function(x, data.plot = 'Data') {
+  
+  x$ds <- as.Date(x$ds)
+  m <- prophet(yearly.seasonality = TRUE)
+  m <- fit.prophet(m, x)
+  future <- make_future_dataframe(m, 365)
+  forecast <- predict(m, future)
+  
+  if(data.plot == 'Data') {
+    forecast$ds <- as.Date(forecast$ds)
+    df <- full_join(x, forecast)  
+    return(df)
+  }
+  
+  else{
+    plot(m,forecast)
+  }
+  
+}
+
 formatted_data <- function() {
     x <- tribble(
              ~ds,  
@@ -303,26 +323,3 @@ df$ds <- as.Date(df$ds)
 
 return(df)
 }
-run_forecast_with <- function(x, data.plot = 'Data') {
-  
-  x$ds <- as.Date(x$ds)
-  m <- prophet(yearly.seasonality = TRUE)
-  m <- fit.prophet(m, x)
-  future <- make_future_dataframe(m, 365)
-  forecast <- predict(m, future)
-  
-  #
-  if(data.plot == 'Data') {
-    forecast$ds <- as.Date(forecast$ds)
-    df <- full_join(x, forecast)  
-    return(df)
-  }
-  
-  else{
-    plot(m,forecast)
-  }
-  
-}
-
-
-
