@@ -39,3 +39,5 @@ So I decided to adjust the way the model calculated its decomposition components
 ![Multiplicative - 4 sin fourier](https://github.com/reidwil/programming_for_analysts/blob/master/prophet/multiplicative_fourier_4.png)
 
 --------------------------------
+## Conclusion
+Ahh even better than the first model and there was only one new feature added! Prophet shines as an out of the box tool for generic forecasts. Because of it's simplicity in use, the "user-in-the-loop" is allowed to iterate quickly to find the best looking forecast over the set of data!
