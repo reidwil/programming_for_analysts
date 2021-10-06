@@ -22,11 +22,11 @@ search(){
 run_last(){
     if [ -z "$1" ]
         then
-            echo "There were no arguments passed"
+            fail "There were no arguments passed"
             exit
     else
         output=$(search -1 $1)
-        echo $output
+        success $output
     fi
 }
 
@@ -35,11 +35,36 @@ require(){
     for tool in "${req_tools[@]}"; do
     if ! command -v "$tool" > /dev/null; then
         fail "It looks like '${tool}' is not installed; please install it and run this setup script again."
-        exit 1
+        exit
     fi
     done
 }
 
+dbt_profile(){
+    cat $HOME/.dbt/profiles.yml
+}
+
 lets(){
-    echo "${@}"
+    info "${@}"
+}
+
+create_venv() {
+    info "Creating virtual environment in $1"
+    python3 -m venv $1
+}
+
+go_to_vent() {
+    info "Hopping into your virtual environment"
+    source $1/bin/activate
+}
+
+reids_venv() {
+    if [ -z "$1" ]
+    then
+        DIR=./env
+    else
+        DIR=$1
+    fi
+    create_venv $DIR
+    go_to_vent $DIR
 }
