@@ -1,7 +1,3 @@
-from typing import Protocol
+from streaming.utils import BufferData
 
-from streaming.data import BufferData
-
-class StreamingDevice(Protocol):
-    def get_buffer_data(self) -> BufferData:
-        ...
+def get_buffer_data() -> BufferData: ...
