@@ -1,6 +1,6 @@
 # dbt cloud cli :cloud:
 
-The name of this repository is slightly a misnomer in the fact that this is really a set of python methods to interact with Jetblue's dbt cloud instance. The `CLI` part of this repository has yet to be set up and possible never will be - if you're reading this and are a master at the [click library](https://click.palletsprojects.com/en/8.0.x/), feel free to contribute :eyes:.
+The name of this repository is slightly a misnomer in the fact that this is really a set of python methods to interact with a dbt cloud instance. The `CLI` part of this repository has yet to be set up and possible never will be - if you're reading this and are a master at the [click library](https://click.palletsprojects.com/en/8.0.x/), feel free to contribute :eyes:.
 
 Every method within the DBT class will return either a single json payload or a list of payloads. All of the `DBT.list_*` methods return lists of json payloads
 
