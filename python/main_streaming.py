@@ -5,4 +5,4 @@ from streaming.youtube import YouTubeStreamingService
 def main() -> None:
     logging.basicConfig(level=logging.INFO)
 
-    service = YouTubeStreamingService(device)
+    service = YouTubeStreamingService()

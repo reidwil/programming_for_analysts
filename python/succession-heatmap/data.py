@@ -36,7 +36,6 @@ class Episodes:
             self.air_dates.append(episode.find('div',class_='airdate').text.strip())
             self.ratings.append(float(episode.find('span', class_='ipl-rating-star__rating').text))
             self.votes.append(episode.find('span', class_='ipl-rating-star__total-votes').text)
-            # self.season = episode[-1]
         return list(zip(self.titles, self.air_dates, self.ratings, self.votes))
 
 def main():
