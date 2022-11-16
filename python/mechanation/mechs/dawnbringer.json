@@ -1,0 +1,9 @@
+{
+    "metadata": {
+        "name": "dawnbringer",
+        "health": 20,
+        "tier": 3
+    },
+    "effect": "overal badass",
+    "foo": "bar"
+}

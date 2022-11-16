@@ -1,0 +1,9 @@
+{
+    "metadata": {
+        "name": "guardian",
+        "health": "12",
+        "tier": 1
+    },
+    "effect": "on flip",
+    "foo": "bar"
+}
