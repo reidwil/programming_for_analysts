@@ -1,0 +1,15 @@
+{
+    "name": "Havoc",
+    "power": 2,
+    "color": null,
+    "effect": [
+        {
+            "event_name": "modification",
+            "rule": "All opposing mechs with an EVEN power are removed from battle and disabled"
+        },
+        {
+            "event_name": "during_battle",
+            "rule": "If this mech is the only mech in battle, it wins"
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    "name": "Daybreak",
+    "power": 13,
+    "color": "In the cold, shivering twilight preceding the daybreak of civilization, the dominating emotion of man was fear.",
+    "effect": {
+        "event_name": null,
+        "rule": null
+    }
+}

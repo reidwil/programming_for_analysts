@@ -1,0 +1,9 @@
+{
+    "name": "Doom",
+    "power": 11,
+    "color": null,
+    "effect": {
+        "event_name": "modification",
+        "rule": "Opposing mechs cannot be modified"
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "name": "Shipment",
+    "power": 5,
+    "color": null,
+    "effect": {
+        "event_name": "modification",
+        "rule": "Discard up to 3 of your controlled resources (not of the contested type), and then draw that many new resources."
+    }
+}

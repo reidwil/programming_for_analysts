@@ -1,0 +1,15 @@
+{
+    "name": "Prototype",
+    "power": 6,
+    "color": null,
+    "effect": [
+        {
+            "event_name": "reveal",
+            "rule": "Discard a resource (not of the contested type). If you don't, remove this mech from battle and disable it."
+        },
+        {
+            "event_name": "modification",
+            "rule": "Choose a mech from the shop: swap this mech with the chosen mech"
+        }
+    ]
+}

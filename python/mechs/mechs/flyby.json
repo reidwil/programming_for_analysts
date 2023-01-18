@@ -1,0 +1,9 @@
+{
+    "name": "Flyby",
+    "power": 7,
+    "color": null,
+    "effect": {
+        "event_name": "special",
+        "rule": "When it is your turn to play to the arena, you may instead disable this mech from your hand to draw a resource from your deck."
+    }
+}

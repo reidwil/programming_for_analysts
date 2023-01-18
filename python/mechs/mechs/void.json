@@ -1,0 +1,9 @@
+{
+    "name": "Void",
+    "power": 8,
+    "color": null,
+    "effect": {
+        "event_name": "reveal",
+        "rule": "Opponent's mechs cannot activiate abilities."
+    }
+}

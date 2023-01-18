@@ -1,0 +1,9 @@
+{
+    "name": "Slayer",
+    "power": 1,
+    "color": null,
+    "effect": {
+        "event_name": "during_battle",
+        "rule": "If all opposing mechs have 10 or more power, this mech wins"
+    }
+}

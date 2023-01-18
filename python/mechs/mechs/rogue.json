@@ -1,0 +1,9 @@
+{
+    "name": "Rogue",
+    "power": 12,
+    "color": null,
+    "effect": {
+        "event_name": "special",
+        "rule": "If this mech is played to a battle and claims an uncontested resource, you may reveal this mech to claim an additional resource from the deck. If you do, disable this mech."
+    }
+}

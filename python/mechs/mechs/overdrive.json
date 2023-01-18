@@ -1,0 +1,9 @@
+{
+    "name": "Overdrive",
+    "power": 14,
+    "color": null,
+    "effect": {
+        "event_name": "during_battle",
+        "rule": "If this mech is not in the arena, it loses."
+    }
+}

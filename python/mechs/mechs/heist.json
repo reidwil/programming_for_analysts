@@ -1,0 +1,9 @@
+{
+    "name": "Heist",
+    "power": 10,
+    "color": null,
+    "effect": {
+        "event_name": "after_battle",
+        "rule": "Claim 1 resource from the discard pile or discard 2 resources from the deck"
+    }
+}

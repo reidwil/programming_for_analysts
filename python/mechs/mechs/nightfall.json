@@ -1,0 +1,9 @@
+{
+    "name": "Nightfall",
+    "power": 9,
+    "color": null,
+    "effect": {
+        "event_name": "during_battle",
+        "rule": "The mech with lowest power wins."
+    }
+}

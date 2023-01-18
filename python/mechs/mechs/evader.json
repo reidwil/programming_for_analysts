@@ -1,0 +1,15 @@
+{
+    "name": "Evader",
+    "power": 3,
+    "color": null,
+    "effect": [
+        {
+            "event_name": "reveal",
+            "rule": "You may swap this mech from your hand with your mech in battle"
+        },
+        {
+            "event_name": "after_battle",
+            "rule": "This mech is disabled."
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    "name": "Hijack",
+    "power": 4,
+    "color": null,
+    "effect": {
+        "event_name": "after_battle",
+        "rule": "Take control of one of the opposing mechs. That mech's owner takes control of hijack."
+    }
+}
