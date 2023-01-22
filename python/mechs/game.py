@@ -8,5 +8,3 @@ def initialize_game(player_list):
         for _ in range(3):
             player.deck.append(deck.draw())
     return players
-
-print(initialize_game(['reid', 'hank']))

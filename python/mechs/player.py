@@ -8,6 +8,7 @@ from deck import build_deck
 class Player():
     name: str
     id: Enum
+    resources: list
     deck: list
 
 class Players(Player):
@@ -20,7 +21,7 @@ class Players(Player):
 
     def initialize_players(self, players):
         for player in players:
-            self.players.append(Player(name=player, id=next(self.id_iterator), deck=[]))
+            self.players.append(Player(name=player, id=next(self.id_iterator), resources=[], deck=[]))
 
     def total_players(self):
         return max([player.id for player in self.players])

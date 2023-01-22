@@ -2,6 +2,7 @@ import json
 import random
 from pathlib import Path
 from dataclasses import dataclass
+from abc import abstractmethod
 
 
 # This should move to another file eventually as it will get quite large
@@ -11,6 +12,7 @@ class BaseMech:
     health: int
     tier: int
     effect: dict
+    damage_counter: int = None
 
 @dataclass
 class BaseEffects:
@@ -18,6 +20,9 @@ class BaseEffects:
     data: dict
     event_name: str
     rule: str
+
+    @abstractmethod
+    def get_effect(self, id): ...
 
 class Effects(BaseEffects):
     def __init__(self):
@@ -44,22 +49,23 @@ def get_mechs():
         if file.suffix == '.json' and file.name != 'effects.json':
             yield file.open().read()
 
-class MechBuilder(BaseMech):
+class Card(BaseMech):
     def __init__(self, schema: dict):
         self.set_attrs(json.loads(schema))
+        self.damage_counter = None
 
     def map_effects(self): ...
 
-    def __repr__(self):
+    def show(self):
         kws = [f"{key}={value!r}" for key, value in self.__dict__.items()]
-        return "{}({})".format(type(self).__name__, ", ".join(kws))
+        print("{}({})".format(type(self).__name__, ", ".join(kws)))
 
     def set_attrs(self, obj: dict):
         self.__dict__.update(obj)
 
 class Deck():
     def __init__(self):
-        self.deck = [MechBuilder(mech) for mech in get_mechs()]
+        self.deck = [Card(mech) for mech in get_mechs()]
         self.shuffle()
 
     def shuffle(self):
