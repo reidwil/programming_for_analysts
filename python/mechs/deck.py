@@ -7,10 +7,9 @@ from abc import abstractmethod
 
 # This should move to another file eventually as it will get quite large
 @dataclass
-class BaseMech:
+class BaseCard:
     name: str
-    health: int
-    tier: int
+    power: int
     effect: dict
     damage_counter: int = None
 
@@ -46,19 +45,19 @@ def get_mechs():
     """Looks for all mechs """
     dir = Path.cwd() / "mechs"
     for file in dir.iterdir():
-        if file.suffix == '.json' and file.name != 'effects.json':
+        if file.suffix == '.json' and file.name not in ('effects.json', 'base.json'):
             yield file.open().read()
 
-class Card(BaseMech):
+class Card(BaseCard):
     def __init__(self, schema: dict):
         self.set_attrs(json.loads(schema))
         self.damage_counter = None
 
-    def map_effects(self): ...
+    def map_effects(self, effect: Effects): ...
 
     def show(self):
         kws = [f"{key}={value!r}" for key, value in self.__dict__.items()]
-        print("{}({})".format(type(self).__name__, ", ".join(kws)))
+        print("{}({})".format(type(self).__name__, ",\n\t".join(kws)))
 
     def set_attrs(self, obj: dict):
         self.__dict__.update(obj)
