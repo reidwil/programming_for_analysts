@@ -2,12 +2,14 @@
 <html>
     <head>
         <title>Database CSV File</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
     </head>
     <body>
         <h1>Upload your CSV</h1>
         <form method="POST" action="" enctype="multipart/form-data">
             <p><input type="file" name="file"></p>
+            <p><input name="query" class="textbox" size="25%" height="50" value="Query"></p>
             <p><input type="submit" value="Submit"></p>
-        </form>
+	</form>
     </body>
 </html>
