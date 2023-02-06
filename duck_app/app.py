@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 import os
 from os.path import join, dirname, realpath
-from .db import DB
+from db import DB
 
 app = Flask(__name__)
 app.config["DEBUG"] = True
@@ -23,15 +23,14 @@ def safe_dir(dir_name: os.PathLike) -> None:
 
 @app.route("/", methods=['POST'])
 def upload_files():
-
     duckdb = DB()
     safe_dir(app.config['UPLOAD_FOLDER'])
     uploaded_file = request.files['file']
+    query = request.form['query']
     if uploaded_file.filename != '':
         file_path = os.path.join(app.config['UPLOAD_FOLDER'], uploaded_file.filename)
         uploaded_file.save(file_path)
-    return duckdb.query_file(file_path)
-    # return redirect(url_for('index'))
+    return duckdb.query_file(file_path, query)
 
 if (__name__=="__main__"):
     app.run(port=5000)
