@@ -4,8 +4,6 @@ from pathlib import Path
 from dataclasses import dataclass
 from abc import abstractmethod
 
-
-# This should move to another file eventually as it will get quite large
 @dataclass
 class BaseCard:
     name: str
@@ -32,14 +30,12 @@ class Effects(BaseEffects):
             if effect['id'] == id:
                 return effect
 
-
 def get_effects_schema() -> json:
     """Looks for all mechs """
     dir = Path.cwd() / "mechs"
     for file in dir.iterdir():
         if file.name == 'effects.json':
             return file.open().read()
-
 
 def get_mechs():
     """Looks for all mechs """
@@ -52,8 +48,6 @@ class Card(BaseCard):
     def __init__(self, schema: dict):
         self.set_attrs(json.loads(schema))
         self.damage_counter = None
-
-    def map_effects(self, effect: Effects): ...
 
     def show(self):
         kws = [f"{key}={value!r}" for key, value in self.__dict__.items()]

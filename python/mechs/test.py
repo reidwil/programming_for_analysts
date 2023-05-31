@@ -22,7 +22,6 @@ def arena_battle(card_1: Card, card_2: Card):
     else: 
         print("  :: ERROR :: Power issue between cards")
 
-
 def after_battle(card_1, card_2):
     print("\n\t\tENTERING AFTER BATTLE PHASE")
     for card in (card_1, card_2):
@@ -36,7 +35,7 @@ def after_battle(card_1, card_2):
         print("")
 
 def run():
-    
+
     players = Players(['reid', 'hank'])
     for player in players.players:
         print(f"{player.name}")
