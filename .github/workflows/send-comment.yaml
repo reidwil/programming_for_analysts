@@ -1,0 +1,19 @@
+name: Output to comment
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+jobs:
+  generating-text:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: bash scripts/send-comment.sh
+      - uses: maxkomarychev/octions/octions/issues/create-comment@master
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issue_number: ${{ github.event.pull_request.number }}
+          body: FILE::text.txt
+      
